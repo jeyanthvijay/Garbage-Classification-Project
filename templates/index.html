@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ADD8E6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .garbage-photos {
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .garbage-photos img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .garbage-photos img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class ="container" >
+        <h1>Garbage Classification</h1>
+        <p>Proper garbage disposal is important for maintaining cleanliness and environmental sustainability. Here are some tips for garbage disposal:</p>
+        <ul style="text-align: left;">
+            <li>Separate recyclable and non-recyclable materials.</li>
+            <li>Compost organic waste for use as fertilizer.</li>
+            <li>Avoid littering and dispose of garbage in designated bins.</li>
+            <li>Reduce waste by choosing reusable products and avoiding single-use plastics.</li>
+        </ul>
+        <div class="garbage-photos">
+            <img src="https://i.ibb.co/NnJ9ZnM/jon-moore-1-Px-Gp8kk-Qyk-unsplash.jpg" alt="Cardboard" width="100">
+            <img src="https://i.ibb.co/ykpwtcp/markus-spiske-f-Dvok-Tkw-EZ8-unsplash.jpg" alt="Compost">
+            <img src="https://i.pinimg.com/564x/99/0a/dd/990add6d36726ba669110982857c4624.jpg" alt="Glass">
+            <img src="https://i.ibb.co/s9D886Q/pavel-neznanov-w95-Fb7-EEcj-E-unsplash.jpg" alt="Metal">
+            <img src="https://i.ibb.co/9bx9F5y/michael-dziedzic-f-Tdn-RCp-RTd-E-unsplash.jpg" alt="Paper">
+            <img src="https://i.ibb.co/Ln4wM9h/erik-mclean-Gj-Cx5-Khul-ZI-unsplash.jpg" alt="Plastic">
+            <img src="https://i.ibb.co/09XvNdt/evgeny-karchevsky-k1t-Uxfs8-JYY-unsplash.jpg" alt="Trash">
+        </div>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <h2>Upload an Image</h2>
+            <input type="file" name="image">
+            <br>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+</html>

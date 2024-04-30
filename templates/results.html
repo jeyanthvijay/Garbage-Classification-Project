@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+    <h2>Prediction Result</h2>
+    <p>Predicted Class: {{ result }}</p>
+
+    {% if result == 'trash' %}
+        <img src="https://i.ibb.co/09XvNdt/evgeny-karchevsky-k1t-Uxfs8-JYY-unsplash.jpg" alt="Trash Image" width="200">
+    {% elif result == 'plastic' %}
+        <img src="https://i.ibb.co/Ln4wM9h/erik-mclean-Gj-Cx5-Khul-ZI-unsplash.jpg" alt="Plastic Image" width="200">
+     {% elif result == 'metal' %}
+        <img src="https://i.ibb.co/s9D886Q/pavel-neznanov-w95-Fb7-EEcj-E-unsplash.jpg" alt="Metal Image" width="200">
+     {% elif result == 'compost' %}
+        <img src="https://i.ibb.co/ykpwtcp/markus-spiske-f-Dvok-Tkw-EZ8-unsplash.jpg" alt="Compost Image" width="200">
+     {% elif result == 'paper' %}
+        <img src="https://i.ibb.co/9bx9F5y/michael-dziedzic-f-Tdn-RCp-RTd-E-unsplash.jpg" alt="Paper Image" width="200">
+     {% elif result == 'cardboard' %}
+        <img src="https://i.ibb.co/NnJ9ZnM/jon-moore-1-Px-Gp8kk-Qyk-unsplash.jpg" alt="Cardboard Image" width="200">
+     {% elif result == 'glass' %}
+        <img src="https://i.pinimg.com/564x/99/0a/dd/990add6d36726ba669110982857c4624.jpg" alt="Glass Image" width="200">
+
+    {% else %}
+        <img src="default_image.jpg" alt="Uploaded Image" width="200">
+    {% endif %}
+
+    <a href="/">Upload Another Image</a>
+</body>
+</html>
+
+
