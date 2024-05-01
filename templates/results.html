@@ -2,33 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Result</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="ksssuu.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Add any additional CSS styles here */
+        /* For example, you can add styles for the description */
+        .description {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Prediction Result</h2>
-    <p>Predicted Class: {{ result }}</p>
+    <header>
+        <a href="#" class="logo">Garbage Classification</a>
+        <!-- You can add the menu icon and dark mode icon here if needed -->
+    </header>
 
-    {% if result == 'trash' %}
-        <img src="https://i.ibb.co/09XvNdt/evgeny-karchevsky-k1t-Uxfs8-JYY-unsplash.jpg" alt="Trash Image" width="200">
-    {% elif result == 'plastic' %}
-        <img src="https://i.ibb.co/Ln4wM9h/erik-mclean-Gj-Cx5-Khul-ZI-unsplash.jpg" alt="Plastic Image" width="200">
-     {% elif result == 'metal' %}
-        <img src="https://i.ibb.co/s9D886Q/pavel-neznanov-w95-Fb7-EEcj-E-unsplash.jpg" alt="Metal Image" width="200">
-     {% elif result == 'compost' %}
-        <img src="https://i.ibb.co/ykpwtcp/markus-spiske-f-Dvok-Tkw-EZ8-unsplash.jpg" alt="Compost Image" width="200">
-     {% elif result == 'paper' %}
-        <img src="https://i.ibb.co/9bx9F5y/michael-dziedzic-f-Tdn-RCp-RTd-E-unsplash.jpg" alt="Paper Image" width="200">
-     {% elif result == 'cardboard' %}
-        <img src="https://i.ibb.co/NnJ9ZnM/jon-moore-1-Px-Gp8kk-Qyk-unsplash.jpg" alt="Cardboard Image" width="200">
-     {% elif result == 'glass' %}
-        <img src="https://i.pinimg.com/564x/99/0a/dd/990add6d36726ba669110982857c4624.jpg" alt="Glass Image" width="200">
+    <section class="result">
+        <h2>Prediction Result</h2>
+        <p>Predicted Class: {{ result }}</p>
 
-    {% else %}
-        <img src="default_image.jpg" alt="Uploaded Image" width="200">
-    {% endif %}
+        {% if result == 'trash' %}
+            <img src="https://i.ibb.co/09XvNdt/evgeny-karchevsky-k1t-Uxfs8-JYY-unsplash.jpg" alt="Trash Image" width="200">
+            <p class="description">This item belongs to the category of trash. Please dispose of it properly.</p>
+        {% elif result == 'plastic' %}
+            <img src="https://i.ibb.co/Ln4wM9h/erik-mclean-Gj-Cx5-Khul-ZI-unsplash.jpg" alt="Plastic Image" width="200">
+            <p class="description">This item is made of plastic. Consider recycling it if possible.</p>
+        {% elif result == 'metal' %}
+            <img src="https://i.ibb.co/s9D886Q/pavel-neznanov-w95-Fb7-EEcj-E-unsplash.jpg" alt="Metal Image" width="200">
+            <p class="description">This item belongs to the category of metal. It can be recycled.</p>
+        {% elif result == 'compost' %}
+            <img src="https://i.ibb.co/ykpwtcp/markus-spiske-f-Dvok-Tkw-EZ8-unsplash.jpg" alt="Compost Image" width="200">
+            <p class="description">This item is compostable. It can be used for organic waste recycling.</p>
+        {% elif result == 'paper' %}
+            <img src="https://i.ibb.co/9bx9F5y/michael-dziedzic-f-Tdn-RCp-RTd-E-unsplash.jpg" alt="Paper Image" width="200">
+            <p class="description">This item is made of paper. Consider recycling it to save trees.</p>
+        {% elif result == 'cardboard' %}
+            <img src="https://i.ibb.co/NnJ9ZnM/jon-moore-1-Px-Gp8kk-Qyk-unsplash.jpg" alt="Cardboard Image" width="200">
+            <p class="description">This item is made of cardboard. It can be recycled.</p>
+        {% elif result == 'glass' %}
+            <img src="https://i.pinimg.com/564x/99/0a/dd/990add6d36726ba669110982857c4624.jpg" alt="Glass Image" width="200">
+            <p class="description">This item is made of glass. Consider recycling it to reduce waste.</p>
+        {% else %}
+            <img src="default_image.jpg" alt="Uploaded Image" width="200">
+            <p class="description">The predicted garbage category is not available. Please try again.</p>
+        {% endif %}
 
-    <a href="/">Upload Another Image</a>
+        <a href="/">Upload Another Image</a>
+    </section>
+
+    <footer>
+        <p>© Garbage Classification. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
-
-
